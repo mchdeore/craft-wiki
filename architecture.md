@@ -45,7 +45,7 @@ The same store runs over three places. Its rules do not change between them.
 | Kept in | How | Used for |
 |---|---|---|
 | memory | plain Python values | the checks |
-| a folder | each call that changes something is written to a file, and run again in order at opening | one server, no database, no worker |
+| a folder | each call that changes something is written to a file, and run again in order at opening | one server, no database, no worker: jobs wait, and so do uploaded files |
 | PostgreSQL | one call is one transaction; changes go one at a time under a lock; reads take no lock | a site with workers, and libraries larger than memory |
 
 In PostgreSQL the tables are objects, changes, jobs and blobs (bytes, each kept once under its fingerprint), the text index, and a small table of counts, where the month's spending on models is. The text index is written with the change itself, so a search by words is never behind. Vectors are a column on the objects, using pgvector. See `app/pg.py`, `app/tables.py` and `app/library.sql`.
@@ -54,7 +54,7 @@ People, password hashes and sessions are not objects. They are two files in the 
 
 ## The server
 
-`app/server.py` has one address for each call, with JSON in and out, and gives the built screens. It asks who is signed in before it reads anything more, reads every request against a deadline, and says what goes wrong in plain words. It logs the kind of an error and nothing a call carries.
+`app/server.py` has one address for each call, with JSON in and out, and gives the built screens. It asks who is signed in before it reads anything more, reads every request against a deadline, and says what goes wrong in plain words. It logs the kind of an error and nothing a call carries. It reads no file that people upload: it keeps the bytes and queues the [import](machines.md), and its process does not load what reads them. It writes the files that are downloaded.
 
 A program asks as a screen does, with `POST /library/<call>` and the call's arguments as a JSON map, named as `app/store.py` names them, but `from` and `as` without the underscore. `signin` takes `user` and `password` and answers with a session cookie, which each call then carries; `me` says whose it is and `signout` ends it. A call that can change something must also say that it comes from this site, in its `Origin`. What is refused says why, under `refused`.
 
@@ -74,7 +74,7 @@ The queue is the jobs table. A job is the request, the permission and the result
 |---|---|---|
 | equation | fills a table's column from a script | yes |
 | run | runs a notebook's cells | yes |
-| import | reads the text of a PDF | yes |
+| import | reads an uploaded file into its object | yes |
 | build | records which machine image jobs run in | yes |
 | agent | Sprout answers a conversation | no |
 | index | makes an object's vector | no |
@@ -96,7 +96,7 @@ The screens are a SolidJS app in `web`. A panel lists and searches; a view opens
 
 What happens from a person's typing to the tables:
 
-1. What they type is kept as a draft by `web/src/draft.js`. Commit reads the object again and sends only the pieces they changed, as one push, under the one note.
+1. What they type is kept as a draft by `web/src/draft.js`. Commit asks for the object's version, reads the object again if that is not the one on screen, and sends only the pieces they changed, as one push, under the one note.
 2. `web/src/library/ask.js` sends it, with the session and the name of whose screen it is.
 3. `app/server.py` finds out who asks before it reads the body, looks once more after it, and makes the call.
 4. `app/pg.py` makes the call one transaction, under the library's lock. In a folder it is written to the file of calls.

@@ -21,7 +21,7 @@
 | History | the changes of an object, oldest to newest |
 | Image | a packed copy of a program and all it needs, built once and run anywhere |
 | Inbox | the space that shows each person their notices and what is assigned to them |
-| Job | a request that takes time, kept in a queue: an equation, a notebook run, an answer from Sprout |
+| Job | a request that takes time, kept in a queue: an equation, a notebook run, reading an uploaded file, an answer from Sprout |
 | Kind | what sort of object it is: text, table, notebook, space and so on |
 | Launcher | the service on a host that makes a machine for one job and destroys it |
 | Level | how much someone may do with an object: read, organise, edit or owner |
@@ -48,6 +48,7 @@
 | Table | columns and rows in one object |
 | Tag | a word put on an object, to filter by |
 | Vector | what an object means, as numbers, for search by meaning |
+| Upload | to send a file; it waits in its object until a job has read it |
 | Version | one state of an object; every change makes the next |
 | View | the screen that opens one kind of object |
 | Watch | to ask to be told when an object changes |

@@ -21,7 +21,7 @@ The first fetches what is needed and says what is missing. The second makes a pe
 | `scripts/dev run <folder>` | the library kept in that folder |
 | `scripts/dev reset` | takes the throwaway library and database away, once you say yes; the screens' packages and what was built stay |
 
-`scripts/dev` alone lists all it does. Jobs that need a [machine](machines.md) wait where there is none.
+`scripts/dev` alone lists all it does. Jobs that need a [machine](machines.md), reading an uploaded file among them, wait where there is none.
 
 ## People
 
@@ -56,7 +56,7 @@ docker build -t craft .
 docker run --name craft -p 127.0.0.1:5120:5120 -v craft-data:/data craft
 ```
 
-Make the first person in another terminal with `docker exec -it craft python server.py /data person <name> admin`, then open `http://localhost:5120`. Over plain http, signing in works only there.
+Make the first person in another terminal with `docker exec -it craft python server.py /data person <name> admin`, then open `http://localhost:5120`. Over plain http, signing in works only there. There is no worker in it, so no job is done and no uploaded file is read.
 
 ## A cluster
 
@@ -65,17 +65,17 @@ Make the first person in another terminal with `docker exec -it craft python ser
 - Each part runs as an ordinary user, with no added rights and a read-only disk where it can.
 - The app's database login owns its own database and is no superuser.
 - Network rules let only the server, the workers and the backup reach the database.
-- `deploy/traefik.yaml` gives https, for the ingress that k3s ships.
+- `deploy/traefik.yaml` gives https, for the ingress that k3s ships. `deploy/traefik-front.yaml` takes its place where another machine in front holds the certificate.
 
 ## Machines
 
-Jobs that need a machine need a Linux host with an x86-64 processor, `/dev/kvm`, systemd, cgroups v2, glibc 2.39 or newer (Ubuntu 24.04 has it) and Python 3.11 or newer. The launcher lets all machines together hold 4 GB. As root there, `machine/install` puts the image and the launcher in place, as the fingerprint in `machine/print` says. It takes the image from a folder, or has k3s fetch it from the registry it is kept in; with no k3s, build it and name the folder. It checks the image, starts the launcher, and puts the one before back when the new one does not come up. Run it again at any time: where nothing changed it does nothing.
+Jobs that need a machine need a Linux host with an x86-64 processor, `/dev/kvm`, systemd, cgroups v2, glibc 2.39 or newer (Ubuntu 24.04 has it) and Python 3.11 or newer. The launcher lets all machines together hold 2.2 GB, which is one large machine or three small ones; its unit (`machine/launcher.service`) says how much, and a host with more room may say more (`deploy/README.md`). As root there, `machine/install` puts the image and the launcher in place, as the fingerprint in `machine/print` says. It takes the image from a folder, or has k3s fetch it from the registry it is kept in; with no k3s, build it and name the folder. It checks the image, starts the launcher, and puts the one before back when the new one does not come up. Run it again at any time: where nothing changed it does nothing.
 
 `deploy/machines.yaml` is the worker that uses them. It reaches the launcher's socket and the database, and holds no model's key. It has no rights on the host beyond that.
 
 ## Deploying
 
-A merge to main runs the checks, builds the image and keeps it under its commit. On the host, `deploy/pull` is run by a timer: it reaches out, finds that main has moved and its image is there, puts in that commit's machines, and applies its files with that image. To deploy, nothing outside reaches in. A commit that does not come up is put back, and is not tried again until main moves. The steps done by hand once are in the launch checklist (`deploy/README.md`).
+A merge to main runs the checks, builds the image and keeps it under its commit. On a machine set up by `deploy/vm.yaml`, `deploy/pull` is run by a timer, as root: it reaches out, finds that main has moved and its image is there, puts in that commit's machines, and applies its files with that image. To deploy, nothing outside reaches in. Where k3s runs on Docker a person runs it: it builds the image there from the commit, and says when the machines are to be put in as root. Until the commit's machines are in, uploaded files wait, and people's code runs in the machine before, where there is one. A commit that does not come up is put back, and is not tried again until main moves. The steps done by hand once are in the launch checklist (`deploy/README.md`).
 
 ## Health
 

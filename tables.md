@@ -4,7 +4,7 @@ A table is columns and rows in one object. Each column and each row has an id of
 
 ## Making one
 
-- Upload a .csv or .tsv file. Its first line names the columns, and each later line is a row. A line with more fields than there are columns is refused. Empty lines are left out.
+- Upload a .csv or .tsv file. It is read by a [job](notices.md#jobs), and so are the lines typed for a new table. Its first line names the columns, and each later line is a row. A file with a line of more fields than there are columns is not read. Empty lines are left out.
 - Or use **New table** and type the columns' names with commas between them. Rows may follow.
 
 The limits on size are on [documents](documents.md#limits).

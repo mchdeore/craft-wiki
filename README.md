@@ -41,7 +41,7 @@ For anyone who uses CRAFT:
 For people who run or change CRAFT:
 
 - [Architecture](architecture.md): the parts of CRAFT and how they connect.
-- [Machines](machines.md): where a person's code runs.
+- [Machines](machines.md): where a person's code runs and uploaded files are read.
 - [Running and backing up](running.md)
 - [Development](development.md)
 - [Dependencies](dependencies.md)

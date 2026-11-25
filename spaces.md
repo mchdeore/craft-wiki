@@ -73,7 +73,7 @@ When you edit, you write a draft. It is kept in your own browser, for you and th
 - Others' commits show on your screen within a few seconds, around your draft.
 - If someone else changed a piece that is in your draft, the screen says who and shows theirs. Choose **Take theirs**, or commit: the later commit wins on that piece. The other one stays in the history.
 
-Some changes are not drafted and are made at once, each as a version: titles, tags, sharing, dates, moves, the bin, an uploaded file, a restore, a merge, changes in SQL, columns added, retyped or taken away, equations added, removed or run, a message in a conversation, a proposal of Sprout's that you approve, and **Notify me**. A renamed column is in the draft.
+Some changes are not drafted and are made at once, each as a version: titles, tags, sharing, dates, moves, the bin, an uploaded file (when it is sent, and again when it is read), a restore, a merge, changes in SQL, columns added, retyped or taken away, equations added, removed or run, a message in a conversation, a proposal of Sprout's that you approve, and **Notify me**. A renamed column is in the draft.
 
 Asking to be told is itself a version of the object, so others who asked are told of it.
 

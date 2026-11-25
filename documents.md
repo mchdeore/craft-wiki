@@ -1,6 +1,8 @@
 # Documents
 
-You bring a file in by dropping it on a [space](spaces.md#spaces) or with **Upload**. You need edit on the space. CRAFT reads it into an object, named after the file, which you edit in the browser and download again as a file.
+You bring a file in by dropping it on a [space](spaces.md#spaces) or with **Upload**. You need edit on the space. It becomes an object, named after the file, which you edit in the browser and download again as a file.
+
+The object is there at once, and the file is read into it by a [job](notices.md#jobs) of yours, in a [machine](machines.md). Until then it says that the file waits or is being read, and you can cancel that, share it, or download the file as it came. You can make a copy of it once it is read, and of a PDF at once. Where there is no machine, it waits.
 
 ## What can be uploaded
 
@@ -19,11 +21,13 @@ The screens refuse any other ending, the older .doc, .xls and .ppt among them.
 ## Limits
 
 - A file is at most 50 MB.
-- A file can also hold too much for its size. About 100,000 rows by 12 columns of a table file, or 20,000 rows by 8 columns of a workbook, can be read. A table file has at most 4,000 columns. A larger one is refused: make it into several.
-- A file that is damaged, locked with a password, or not what its ending says is refused. A text, table or code file must be plain text in UTF-8.
-- A PDF locked with a password is kept and shown, and its text is not read.
+- A file can also hold too much for its size. About 100,000 rows by 12 columns of a table file, or 50,000 rows by 8 columns of a workbook, can be read. A table file has at most 4,000 columns. A larger one is not read: make it into several.
+- A new version of a very large workbook can be read when about half of it at most is different. Upload one that differs more as a file of its own.
+- A file that is damaged, locked with a password, or not what its ending says is not read. A text, table or code file must be plain text in UTF-8.
 
-When several files are uploaded and one is refused, the screen says why, and the ones after it are not sent.
+A file that is not read is kept as it came. The object says so, and to the one who sent it, in the browser it was sent from, why. Whoever may edit the object can have the file read again or upload another in its place. If the file was its first, it can also be downloaded as it came, and the object put in the bin. An object that had a version before keeps it, and **Keep it as it is** takes the new file off it again.
+
+When several files are uploaded, each is read by a job of its own, and **Jobs** lists them. One that is too large or of another kind is refused before it is sent: the screen says why, and the ones after it are not sent.
 
 ## Text
 
@@ -58,13 +62,13 @@ You see each slide's words, in order, and can change them. Pictures, layout and 
 ## PDF
 
 - **Pages** shows the PDF as your browser does. **Text** shows its words, page by page.
-- The words are read by a [job](notices.md#jobs), in a [machine](machines.md), after the upload. Until then the pages are there and the words are not found by [search](search.md).
+- The pages are there at once. The words are found by [search](search.md) once they have been read. Where none were, **Read its words** tries again.
 - A scanned page has no words: CRAFT does not read text from pictures.
 - A PDF is not edited. Upload a new version in its place.
 
 ## Downloading
 
-**Download** gives the file as it was last committed. Your draft is not in it.
+**Download** gives the file as it was last committed. Your draft is not in it. Until the first file of an object is read, it gives that file as it came.
 
 - A Word, Excel or PowerPoint file comes back with everything it came with, and your changes in it.
 - A PDF comes back exactly as it was uploaded.
@@ -73,8 +77,10 @@ You see each slide's words, in order, and can change them. Pictures, layout and 
 
 ## Uploading a new version
 
-**Upload a new version** takes a file of the same kind, edited elsewhere, and makes it the next version. What did not change stays the same piece, with its history. In a table, a column is matched by its name and a row by its values. A file that lacks a column an equation uses is refused: remove the equation first.
+**Upload a new version** takes a file of the same kind, edited elsewhere, and makes it the next version. What did not change stays the same piece, with its history. In a table, a column is matched by its name and a row by its values. A file that lacks a column an equation uses is not read in: remove the equation first.
 
-The object then says what the file says. If someone committed a change after you downloaded the file, the upload replaces it. Their version is in the history, and **Restore** brings it back.
+The object then says what the file says. If someone committed a change after you downloaded the file and before you uploaded it, the upload replaces it. Their version is in the history, and **Restore** brings it back. What someone commits while the file waits to be read stays; where the file would change the same place it is not read in, and says so, and **Read it again** puts the file over their change.
 
-In the code: files in and out (`app/files.py`), Office files (`app/office.py`), what each kind declares (`app/design`).
+When a second file is uploaded while the first waits, only the later one is read, and the job of the first says so. The same file uploaded again, with no change committed since, adds nothing to the history.
+
+In the code: files in and out (`app/files.py`), what reads a file (`app/readers.py`), how it lands (`app/importing.py`), writing Office files (`app/office.py`), what each kind declares (`app/design`).

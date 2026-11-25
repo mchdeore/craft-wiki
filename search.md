@@ -7,7 +7,7 @@
 - Type one or more words. An object is found when it holds all of them, in any order, as whole words. Capitals do not matter.
 - Of a long question, the ten longest words count.
 - At most 50 objects are found by their words. By words alone they are in no order that means anything.
-- A newly saved word is found at once.
+- A newly saved word is found at once, and the words of an uploaded file once it is [read](documents.md).
 
 | Found | Not found |
 |---|---|
@@ -15,7 +15,7 @@
 | Paragraphs, slides, sheets and the read text of PDFs | Pictures, and scanned pages |
 | Rows of tables | What a notebook's code printed |
 | Cells of notebooks | |
-| Messages, and the steps of skills | A word of a Word or PowerPoint file that is formatted in parts, such as half of it bold |
+| Messages, and the steps of skills | A word of a Word, Excel or PowerPoint file that is formatted in parts, such as half of it bold |
 
 To find by tag or kind, open a space and use its filter box.
 

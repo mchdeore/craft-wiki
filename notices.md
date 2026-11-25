@@ -12,6 +12,7 @@ Open an object's **Details** and tick **Notify me when this changes**. You need 
 |---|---|
 | An object changes: its content, title, tags, sharing or anything else | Those who asked to be told |
 | A job on an object is asked for, such as a run or an equation, and when it ends | Those who asked to be told |
+| A file you sent waits, and a later one is sent to the same object by someone else | You |
 | An object is put in the bin | Its owner, and those who asked to be told |
 | An object's early history is joined into one change | Those whose changes are in it, and those who asked to be told |
 | An object is removed for good | Those it was shared with, and those who asked to be told |
@@ -30,7 +31,7 @@ A notice is read when you press **Mark read** or **Mark all read**, and not beca
 
 ## Jobs
 
-Some work takes a while and is done in the background: a notebook's run, an equation, adding or retyping a column, reading a PDF's words, an answer from Sprout, and reading an object's meaning for search.
+Some work takes a while and is done in the background: a notebook's run, an equation, adding or retyping a column, reading an uploaded file, an answer from Sprout, and reading an object's meaning for search.
 
 - **Jobs** lists the newest 20 that you asked for in this browser, with how far each is and why one failed. One that you asked for elsewhere appears when you open its object while it is still open.
 - **Cancel** stops one that is waiting or running.

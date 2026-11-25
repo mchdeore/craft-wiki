@@ -64,7 +64,7 @@ Opening something you may not read gives the same answer as opening something th
 
 ## Things that run for you
 
-A job, such as an equation, a notebook run or an answer from Sprout, belongs to the person who asked for it and has their rights and no more. The rights are looked at again just before anything is saved, so a right lost meanwhile stops it.
+A job, such as an equation, a notebook run, reading a file or an answer from Sprout, belongs to the person who asked for it and has their rights and no more. The rights are looked at again just before anything is saved, so a right lost meanwhile stops it.
 
 Code someone else wrote never brings its author's rights. Before it runs for you, CRAFT says which version runs, who else wrote in it, what it is handed, where it writes, and who can read that place without being able to read all it was made from. It runs only after you say yes. You are asked again when others change the code, when what it is handed or where it writes changes, or when someone new can read that place ([machines](machines.md)).
 
