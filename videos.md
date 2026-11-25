@@ -4,7 +4,9 @@ Short films about CRAFT, to watch here. What CRAFT does now is on [the other pag
 
 ## Torvek's Big Day
 
-Five minutes on one Space where everyone is on the same page, and a look inside the CRAFT workspace.
+A Cydonia Space Authority story: five minutes on one Space where everyone is on the same page.
+
+It is a made-up story, and its screens are drawn to show the idea of CRAFT, not the product as it is today.
 
 Sprout suggests. You decide.
 

@@ -1,6 +1,6 @@
 # Dependencies
 
-What CRAFT is made with, and why each is there. Versions that are fixed are in the files named here; the app's image takes the newest psycopg, Alpine, Python 3.12 and Node 22 at each build. Licences are in `THIRD-PARTY.md`.
+What CRAFT is made with, and why each is there. Versions that are fixed are in the files named here. Licences are in `THIRD-PARTY.md`.
 
 ## The server and the workers
 

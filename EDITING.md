@@ -37,4 +37,4 @@ Set once, in the repository's **Settings**, **Pages**: **Source** says **Deploy 
 
 ## What never goes in
 
-A private path, anything from `.local`, a host name or an address, where the site of CRAFT itself runs, an account, the name of a person or of an organisation (but for the makers of what CRAFT is built with), a key or a password, a document's text, or a weakness that is not yet fixed. The same goes for commit messages and for the repository's description.
+A private path, anything from `.local`, a host name or an address, where the site of CRAFT itself runs, an account, the name of a person or of an organisation (but for the makers of what CRAFT is built with, and those made up for a story), a key or a password, a document's text, or a weakness that is not yet fixed. The same goes for commit messages and for the repository's description.
