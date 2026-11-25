@@ -14,7 +14,7 @@ Sprout needs a hosted model. Where none is set up, it says so and does not answe
 ## What it may read
 
 - Sprout reads as you. Each thing it looks at is checked against your rights, and what you may not read it is refused.
-- It can open an object, also as it was at an earlier version, search, read a history, and ask tables questions in [SQL](tables.md#sql). It has nothing else: no web, no files on your computer, no way to run code.
+- It can open an object, also as it was at an earlier version, search, read a history, and ask tables questions in [SQL](tables.md#sql). A large object it reads a part at a time. It has nothing else: no web, no files on your computer, no way to run code.
 - Your rights, and what it read, are checked again just before its answer is kept.
 - A shared conversation is read by all who can open it. Sprout answers with what its asker may read, so its readers may be shown what they could not open themselves. The screen says so.
 

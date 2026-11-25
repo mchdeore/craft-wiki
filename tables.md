@@ -47,7 +47,7 @@ order by total desc
 
 - A table is named by its title or its id, in double quotes. A column is named by its title, or by its id.
 - A title that several tables you can read share is refused: use the id. A copy with the same title as its original is named by its id.
-- A question may join several tables. One you cannot read is not found.
+- A question may join several tables. One you cannot read is not found, and one whose first file is not read yet is refused.
 - A decimal and a date are text in SQL. To compare a decimal as a number, write `cast(cost as real) > 5`.
 - Each row's id is the column `id`.
 

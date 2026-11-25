@@ -46,7 +46,7 @@ The same store runs over three places. Its rules do not change between them.
 |---|---|---|
 | memory | plain Python values | the checks |
 | a folder | each call that changes something is written to a file, and run again in order at opening | one server, no database, no worker: jobs wait, and so do uploaded files |
-| PostgreSQL | one call is one transaction; changes go one at a time under a lock; reads take no lock | a site with workers, and libraries larger than memory |
+| PostgreSQL | one call is one transaction; changes go one at a time under a lock; reads take no lock; a server answers what is large, and searches through text, one at a time beside the rest | a site with workers, and libraries larger than memory |
 
 In PostgreSQL the tables are objects, changes, jobs and blobs (bytes, each kept once under its fingerprint), the text index, and a small table of counts, where the month's spending on models is. The text index is written with the change itself, so a search by words is never behind. Vectors are a column on the objects, using pgvector. See `app/pg.py`, `app/tables.py` and `app/library.sql`.
 

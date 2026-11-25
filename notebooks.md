@@ -38,7 +38,7 @@ The code reaches nothing in the library but the inputs the notebook names. Add o
 | a notebook | The text of the file it would be downloaded as; that of an .ipynb is JSON |
 | a Word, Excel, PowerPoint or PDF file | The bytes of the file |
 
-Without a version, the input is as it was when the run was asked for. You must be able to read it when the run starts and when it ends.
+Without a version, the input is as it was when the run was asked for. You must be able to read it when the run starts and when it ends. A run that is handed an object whose first file is not read yet fails, and says so.
 
 Inputs arrive as copies. A run changes nothing in the library but the notebook's outputs.
 

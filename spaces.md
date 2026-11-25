@@ -13,7 +13,7 @@ An object has four parts:
 | What it says about itself | A few facts read from the content, such as the number of rows or pages. Nobody writes them. |
 | Its meaning | Numbers made from its words, for [search by meaning](search.md#by-meaning) |
 
-An object also has a version number, a history and an id. The id is used once and never changes. Two objects may have the same title.
+An object also has a version number, a history and an id. The id is used once and never changes. Two objects may have the same title. An object's title, description, tags and sharing are together at most 20,000 bytes: what is longer is content.
 
 ## Kinds
 

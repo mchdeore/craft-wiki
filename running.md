@@ -75,7 +75,7 @@ Jobs that need a machine need a Linux host with an x86-64 processor, `/dev/kvm`,
 
 ## Deploying
 
-A merge to main runs the checks, builds the image and keeps it under its commit. On a machine set up by `deploy/vm.yaml`, `deploy/pull` is run by a timer, as root: it reaches out, finds that main has moved and its image is there, puts in that commit's machines, and applies its files with that image. To deploy, nothing outside reaches in. Where k3s runs on Docker a person runs it: it builds the image there from the commit, and says when the machines are to be put in as root. Until the commit's machines are in, uploaded files wait, and people's code runs in the machine before, where there is one. A commit that does not come up is put back, and is not tried again until main moves. The steps done by hand once are in the launch checklist (`deploy/README.md`).
+A merge to main runs the checks, builds the image and keeps it under its commit. On a machine set up by `deploy/vm.yaml`, `deploy/pull` is run by a timer, as root: it reaches out, finds that main has moved and its image is there, puts in that commit's machines, and applies its files with that image. To deploy, nothing outside reaches in. Where k3s runs on Docker a person runs it: it builds the image there from the commit, and says when the machines are to be put in as root. Until the commit's machines are in, uploaded files wait, and people's code runs in the machine before, where there is one. A commit that does not come up, its workers among it, is put back, and is not tried again until main moves. Nor is a machine that was fetched later and did not come up. The steps done by hand once are in the launch checklist (`deploy/README.md`).
 
 ## Health
 

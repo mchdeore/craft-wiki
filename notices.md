@@ -33,7 +33,7 @@ A notice is read when you press **Mark read** or **Mark all read**, and not beca
 
 Some work takes a while and is done in the background: a notebook's run, an equation, adding or retyping a column, reading an uploaded file, an answer from Sprout, and reading an object's meaning for search.
 
-- **Jobs** lists the newest 20 that you asked for in this browser, with how far each is and why one failed. One that you asked for elsewhere appears when you open its object while it is still open.
+- **Jobs** lists the newest 100 that you asked for in this browser, with how far each is and why one failed. One that you asked for elsewhere appears when you open its object while it is still open.
 - **Cancel** stops one that is waiting or running.
 - Jobs of several people take turns: the person with the fewest running goes next.
 - A job has the rights of the person who asked for it, checked again when it saves. If you lose the right meanwhile, nothing is saved.

@@ -25,7 +25,7 @@ The screens refuse any other ending, the older .doc, .xls and .ppt among them.
 - A new version of a very large workbook can be read when about half of it at most is different. Upload one that differs more as a file of its own.
 - A file that is damaged, locked with a password, or not what its ending says is not read. A text, table or code file must be plain text in UTF-8.
 
-A file that is not read is kept as it came. The object says so, and to the one who sent it, in the browser it was sent from, why. Whoever may edit the object can have the file read again or upload another in its place. If the file was its first, it can also be downloaded as it came, and the object put in the bin. An object that had a version before keeps it, and **Keep it as it is** takes the new file off it again.
+A file that is not read is kept as it came. The object says so, and to the one who sent it, in the browser it was sent from, why. Whoever may edit the object can have the file read again or upload another in its place. If the file was its first, it can also be downloaded as it came, and the object put in the bin. An object that had a version before keeps it, and **Keep it as it is** takes the new file off it again, whoever sent it, also while it still waits to be read.
 
 When several files are uploaded, each is read by a job of its own, and **Jobs** lists them. One that is too large or of another kind is refused before it is sent: the screen says why, and the ones after it are not sent.
 
@@ -81,6 +81,6 @@ You see each slide's words, in order, and can change them. Pictures, layout and 
 
 The object then says what the file says. If someone committed a change after you downloaded the file and before you uploaded it, the upload replaces it. Their version is in the history, and **Restore** brings it back. What someone commits while the file waits to be read stays; where the file would change the same place it is not read in, and says so, and **Read it again** puts the file over their change.
 
-When a second file is uploaded while the first waits, only the later one is read, and the job of the first says so. The same file uploaded again, with no change committed since, adds nothing to the history.
+When a second file is uploaded while the first waits, only the later one is read, and the job of the first says so. The same file uploaded again under the same ending, with no change committed since, adds nothing to the history.
 
 In the code: files in and out (`app/files.py`), what reads a file (`app/readers.py`), how it lands (`app/importing.py`), writing Office files (`app/office.py`), what each kind declares (`app/design`).
