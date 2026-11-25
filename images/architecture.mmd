@@ -1,0 +1,10 @@
+flowchart TD
+  screens["Screens, in the browser"] -->|calls, as JSON| server["Server: who is asking; one address for each call"]
+  server --> library["Library: the eight calls and every rule"]
+  workers["Workers: take queued jobs, as the person who asked"] --> library
+  library --> postgres[("PostgreSQL: objects, changes, jobs, bytes")]
+  library -.->|or| folder[("A folder: no workers")]
+  workers --> launcher["Launcher: on the host, only for jobs that need a machine"]
+  launcher --> machine["Machine: one job, then destroyed"]
+  workers -.->|if set up| models["Hosted models: optional; a monthly cap"]
+  server -.->|words of a search| models

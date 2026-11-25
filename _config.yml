@@ -1,0 +1,4 @@
+title: CRAFT
+description: One library for what a small group knows, where every change is a version
+theme: jekyll-theme-primer
+exclude: [images/*.mmd]
