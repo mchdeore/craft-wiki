@@ -29,6 +29,7 @@ Each object has a kind, which is fixed when it is made.
 | pdf | A PDF and its text | A file |
 | conversation | Messages, and [Sprout's](sprout.md) answers | **New conversation** |
 | skill | What something is for, and its steps in order. Nothing runs them. | **New skill** |
+| value | One named number, with its unit and a note, and the places that quote it ([Sprout](sprout.md#values-and-their-uses)) | **New value** |
 
 The library also has kinds for settings, emails, schedules and machines. They have no screen: opening one shows its details and history. No email is sent or received, and nothing starts a schedule.
 
@@ -54,6 +55,7 @@ What you make is yours alone until you share it. **Details** shows who an object
 | read | Open it, find it, see its history, download it, copy it, be told of its changes |
 | organise | Also its title, description, tags and links. The screens offer renaming and tags. They do not show descriptions or links. |
 | edit | Also its content and its date, restoring a version, the bin |
+| approve | Also marking it approved, or taking the mark off ([access](access.md#levels)) |
 | owner | Also who it is shared with, and removing it for good |
 
 - Share with a person, with a role, or with **everyone**, which is everyone who can sign in. The library also takes a space's id there, for all who can read that space; the screens do not show the id.
@@ -75,7 +77,7 @@ When you edit, you write a draft. It is kept in your own browser, for you and th
 
 Some changes are not drafted and are made at once, each as a version: titles, tags, sharing, dates, moves, the bin, an uploaded file (when it is sent, and again when it is read), a restore, a merge, changes in SQL, columns added, retyped or taken away, equations added, removed or run, a message in a conversation, a proposal of Sprout's that you approve, and **Notify me**. A renamed column is in the draft.
 
-Asking to be told is itself a version of the object, so others who asked are told of it.
+Asking to be told is itself a version of the object, but it tells nobody.
 
 ## Versions and restore
 

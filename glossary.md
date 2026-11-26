@@ -5,6 +5,7 @@
 | About | a few facts about an object, read from its content, shown in lists and used in filters |
 | Admin | a role with every right on every object |
 | Agent | the name of the job in which Sprout answers |
+| Approve | the level above edit, which may also mark an object approved |
 | Assign | to name who should see to an object; the library takes it and lists it in that person's inbox, and the screens do not offer it |
 | Bin | where an object goes before it is removed; it leaves lists and searches, and can be taken out again |
 | Call | one of the eight ways into the library: pull, history, push, find, run, squash, remove, sweep |
@@ -24,7 +25,7 @@
 | Job | a request that takes time, kept in a queue: an equation, a notebook run, reading an uploaded file, an answer from Sprout |
 | Kind | what sort of object it is: text, table, notebook, space and so on |
 | Launcher | the service on a host that makes a machine for one job and destroys it |
-| Level | how much someone may do with an object: read, organise, edit or owner |
+| Level | how much someone may do with an object: read, organise, edit, approve or owner |
 | Library | all the objects, their changes and their jobs |
 | Machine | a small virtual machine that runs one job |
 | Merge | to bring the changes of a copy into its original, or the other way, as one version |
@@ -47,8 +48,10 @@
 | Sweep | to delete bytes that no version names |
 | Table | columns and rows in one object |
 | Tag | a word put on an object, to filter by |
+| Value | one named number with its unit, kept once and quoted by documents |
 | Vector | what an object means, as numbers, for search by meaning |
 | Upload | to send a file; it waits in its object until a job has read it |
+| Use | a link from the words of a document that quote a value to that value; stale when the words no longer give it |
 | Version | one state of an object; every change makes the next |
 | View | the screen that opens one kind of object |
 | Watch | to ask to be told when an object changes |

@@ -46,9 +46,12 @@ Each level holds the one before it:
 | read | open it, find it, read its history, download it, watch it, take a copy |
 | organise | also name it, describe it, tag it, assign it, link it |
 | edit | also change what it holds and its own date, restore an older version, put it in the bin and take it out, merge a copy into it |
+| approve | also mark it approved, or take the mark off |
 | owner | also share it, hand it to another owner, squash its history, remove it for good |
 
 Of what organise allows, the screens offer renaming and tags.
+
+An object is marked approved by its `status` param. Only someone with approve, its owner or an admin may set it to `approved` or change it from that. An admin first puts `approved` on the library's list of params. The screens do not offer it yet.
 
 Share an object from **Details**, under **Shared with**: a person, a role or `everyone`, and a level. Only the owner or an admin sees that form. **Details** also says what you can do with the object in front of you. More is on [spaces and objects](spaces.md#sharing).
 
@@ -60,11 +63,11 @@ Access is always as it is now. Restoring an older version never brings an older 
 
 ## What you cannot see
 
-Opening something you may not read gives the same answer as opening something that does not exist. It is left out of searches and of SQL. A space you share still says that it holds something: its readers are given the object's id and any note put beside it there, and the screens' list leaves it out. Anyone who can read an object can also read its history, with the older versions and who it was shared with.
+Opening something you may not read gives the same answer as opening something that does not exist. It is left out of searches and of SQL. A space you share still says that it holds something: its readers are given the object's id and any note put beside it there, and the screens' list leaves it out. A link that binds a [value](sprout.md#values-and-their-uses) to a document keeps the words it quoted: only those who may read that document see them. Anyone who can read an object can also read its history, with the older versions and who it was shared with.
 
 ## Things that run for you
 
-A job, such as an equation, a notebook run, reading a file or an answer from Sprout, belongs to the person who asked for it and has their rights and no more. The rights are looked at again just before anything is saved, so a right lost meanwhile stops it.
+A job, such as an equation, a notebook run, reading a file or an answer from Sprout, belongs to the person who asked for it and has their rights and no more. Its asker, the owner of the object it works on, or an admin may cancel it. The rights are looked at again just before anything is saved, so a right lost meanwhile stops it.
 
 Code someone else wrote never brings its author's rights. Before it runs for you, CRAFT says which version runs, who else wrote in it, what it is handed, where it writes, and who can read that place without being able to read all it was made from. It runs only after you say yes. You are asked again when others change the code, when what it is handed or where it writes changes, or when someone new can read that place ([machines](machines.md)).
 

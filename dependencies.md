@@ -60,4 +60,4 @@ The launcher uses Python's own library and the host's systemd.
 
 ## Hosted models
 
-Optional: one model answers for Sprout and one makes vectors. They are named in the settings (`.env.example`) and asked over HTTPS with no library of their makers.
+Optional: one model answers for Sprout and one makes vectors. They are named in the settings (`.env.example`) and asked over HTTPS with no library of their makers. Sprout's is asked through Azure OpenAI's API or Claude's.
