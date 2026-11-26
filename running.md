@@ -60,7 +60,7 @@ Make the first person in another terminal with `docker exec -it craft python ser
 
 ## A cluster
 
-`deploy/craft.yaml` is the whole of CRAFT for Kubernetes: the server, a worker, PostgreSQL, a nightly backup, who may reach whom, and the public address. The commands to apply it by hand are at its top. What is kept is in the database's volume and the server's folder, so moving is a copy. Before you apply it, put your own public name and image name in, and make the backup's folder on the host. It is written for k3s: on another cluster, leave out or replace its Traefik parts and give the backup a volume.
+`deploy/craft.yaml` is the whole of CRAFT for Kubernetes: the server, a worker, PostgreSQL, a nightly backup, who may reach whom, and the public address. The commands to apply it by hand are at its top. What is kept is in the database's volume and the server's folder, so moving is a copy. Before you apply it, put your own image name in, and your public name where it says `CRAFT_HOST`, and make the backup's folder on the host. It is written for k3s: on another cluster, leave out or replace its Traefik parts and give the backup a volume.
 
 - Each part runs as an ordinary user, with no added rights and a read-only disk where it can.
 - The app's database login owns its own database and is no superuser.
@@ -75,7 +75,7 @@ Jobs that need a machine need a Linux host with an x86-64 processor, `/dev/kvm`,
 
 ## Deploying
 
-A merge to main runs the checks, builds the image and keeps it under its commit. On a machine set up by `deploy/vm.yaml`, `deploy/pull` is run by a timer, as root: it reaches out, finds that main has moved and its image is there, puts in that commit's machines, and applies its files with that image. To deploy, nothing outside reaches in. Where k3s runs on Docker a person runs it: it builds the image there from the commit, and says when the machines are to be put in as root. Until the commit's machines are in, uploaded files wait, and people's code runs in the machine before, where there is one. A commit that does not come up, its workers among it, is put back, and is not tried again until main moves. Nor is a machine that was fetched later and did not come up. The steps done by hand once are in the launch checklist (`deploy/README.md`).
+A merge to main runs the checks, builds the image and keeps it under its commit. On a machine set up by `deploy/vm.yaml`, `deploy/pull` is run by a timer, as root: it reaches out, finds that main has moved and its image is there, puts in that commit's machines, and applies its files with that image. To deploy, nothing outside reaches in. It takes the site's public name from `deploy/site.env`, one line `CRAFT_HOST=<site>` that git ignores, or from `CRAFT_HOST` in its environment; without it nothing is deployed. Where k3s runs on Docker a person runs it: it builds the image there from the commit, and says when the machines are to be put in as root. Until the commit's machines are in, uploaded files wait, and people's code runs in the machine before, where there is one. A commit that does not come up, its workers among it, is put back, and is not tried again until main moves. Nor is a machine that was fetched later and did not come up. The steps done by hand once are in the launch checklist (`deploy/README.md`).
 
 ## Health
 

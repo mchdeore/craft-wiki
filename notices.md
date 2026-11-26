@@ -6,6 +6,8 @@ CRAFT tells you about changes others make to what you care about. Notices are sh
 
 Open an object's **Details** and tick **Notify me when this changes**. You need only be able to read it. Untick it to stop.
 
+Opening a text, a table, a notebook or a file ticks it for you, unless you once ticked or unticked it yourself: then your choice holds, in every browser. Ticking or unticking it tells nobody.
+
 ## What you are told
 
 | What happens | Who is told |
@@ -13,6 +15,8 @@ Open an object's **Details** and tick **Notify me when this changes**. You need 
 | An object changes: its content, title, tags, sharing or anything else | Those who asked to be told |
 | A job on an object is asked for, such as a run or an equation, and when it ends | Those who asked to be told |
 | A file you sent waits, and a later one is sent to the same object by someone else | You |
+| A file you sent cannot be read | You, and whoever asked for it to be read, with why |
+| A job of yours is cancelled by someone else | You |
 | An object is put in the bin | Its owner, and those who asked to be told |
 | An object's early history is joined into one change | Those whose changes are in it, and those who asked to be told |
 | An object is removed for good | Those it was shared with, and those who asked to be told |
@@ -27,6 +31,8 @@ Open an object's **Details** and tick **Notify me when this changes**. You need 
 
 **Notices** lists them, the newest first, with the object, what happened, who did it and when. Press the title to open the object.
 
+When someone changes what a document you watch says, a line above the tabs names them and the document. **Open it** opens the document, and the cross puts the line away. Either marks that notice read.
+
 A notice is read when you press **Mark read** or **Mark all read**, and not because you opened the object. Whether you read it is kept in the library, so it is the same in any browser. Where a role or everyone was told, your mark counts for you alone.
 
 ## Jobs
@@ -34,7 +40,7 @@ A notice is read when you press **Mark read** or **Mark all read**, and not beca
 Some work takes a while and is done in the background: a notebook's run, an equation, adding or retyping a column, reading an uploaded file, an answer from Sprout, and reading an object's meaning for search.
 
 - **Jobs** lists the newest 100 that you asked for in this browser, with how far each is and why one failed. One that you asked for elsewhere appears when you open its object while it is still open.
-- **Cancel** stops one that is waiting or running.
+- **Cancel** stops one that is waiting or running. You can cancel your own jobs and any job on an object you own; an admin can cancel any.
 - Jobs of several people take turns: the person with the fewest running goes next.
 - A job has the rights of the person who asked for it, checked again when it saves. If you lose the right meanwhile, nothing is saved.
 - A job that needs a [machine](machines.md) waits until there is one.

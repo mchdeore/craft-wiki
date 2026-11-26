@@ -2,7 +2,7 @@
 
 You bring a file in by dropping it on a [space](spaces.md#spaces) or with **Upload**. You need edit on the space. It becomes an object, named after the file, which you edit in the browser and download again as a file.
 
-The object is there at once, and the file is read into it by a [job](notices.md#jobs) of yours, in a [machine](machines.md). Until then it says that the file waits or is being read, and you can cancel that, share it, or download the file as it came. You can make a copy of it once it is read, and of a PDF at once. Where there is no machine, it waits.
+The object is there at once, and the file is read into it by a [job](notices.md#jobs) of yours, in a [machine](machines.md). Until then it says that the file waits or is being read, and you can cancel that, share it, or download the file as it came. You can make a copy of it once it is read, and of a PDF at once. Where there is no machine, it waits. If the file cannot be read, the object says why to everyone who sees it, and its sender is told in [notices](notices.md). The reason holds nothing of the file.
 
 ## What can be uploaded
 

@@ -31,7 +31,24 @@ Sprout changes nothing in the library but its own messages. Asked for a change, 
 - **Approve** makes the change as you, with your rights, as a version in your name. If you may not change that object, you cannot approve.
 - If someone changed the same piece after Sprout read it, the change is refused and nothing is overwritten. **Ask again** writes the question for you. Send it, and Sprout looks anew.
 - **Decline** changes nothing.
-- Anyone who can write in the conversation can decide. The decision is kept in it.
+- Anyone who can write in the conversation can decide. The decision is kept in it as a message, and cannot be changed.
+- Approving makes the change and records the decision in one step. So a proposal is decided once, and a declined change never lands.
+
+## What a change touches
+
+Ask Sprout what a change to an object would break. It lists what relies on it directly, of what you may read: a space that holds it, a link to it on a map, an object that names it, a table equation that runs it, a notebook that reads it. Each comes with its source. Ask about one of those to go further. What it does not list, it did not find.
+
+## Values and their uses
+
+A value is one named number, such as a spacecraft's dry mass, with its unit and a note. It is kept once, and documents quote it.
+
+- Put the value on a map, then ask Sprout where it is used. It finds the parts of what you may read that write it as name = number unit, such as `spacecraft dry mass = 1250 kg`, and proposes a link from each to the value on that map. Nothing is linked until you approve.
+- Each link keeps the words it quoted. When the value changes, a use whose words no longer give it is stale. Sprout lists the stale ones with their sources.
+- The value's own screen lists its uses, each current or stale. You see a quote only if you may read the document it came from.
+
+## Drafting requirements
+
+Ask Sprout to draft requirements into a text. It reads the documents they come from, and proposes new paragraphs at the end of the text: each one plain statement, with the parts it read that say it. One with a source it did not read in that answer is refused. Nothing is added until you approve.
 
 ## Limits
 

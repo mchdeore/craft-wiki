@@ -86,7 +86,7 @@ The worker is `app/worker.py`, which names the file of each step. Machines are o
 
 Two models are optional, one that answers for Sprout and one that makes vectors. Without them Sprout says it is not set up and search goes by words.
 
-Sprout's model is sent what Sprout read as its asker. The vector model is sent the title, the description and the first part of the prose of every object, private ones too, and the words of a search. Both pay into one monthly meter with a cap: the most a request could cost is held before it is sent, so the cap is not passed. In a folder the meter is in memory and starts again with the server (`app/model.py`).
+Sprout's model is asked through Azure OpenAI's API, or Claude's when `CRAFT_MODEL_API` is `anthropic` (`.env.example`). With Claude, a second model may write the requirements Sprout drafts. Sprout's model is sent what Sprout read as its asker. The vector model is sent the title, the description and the first part of the prose of every object, private ones too, and the words of a search. Both pay into one monthly meter with a cap: the most a request could cost is held before it is sent, so the cap is not passed. In a folder the meter is in memory and starts again with the server (`app/model.py`).
 
 ## The screens
 
